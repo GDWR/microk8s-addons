@@ -1,6 +1,14 @@
 microk8s-addons:
   description: "My awesome demo repository."
   addons:
+    - name: "colours"
+      description: "Colours API for getting colour images"
+      version: "1.0.0"
+      check_status: "deployment.apps/colours"
+      supported_architectures:
+       - arm64
+       - amd64
+
     - name: "python-hello-k8s"
       description: "Demo addon implemented in python"
       version: "1.0.0"

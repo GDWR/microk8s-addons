@@ -11,3 +11,11 @@ class TestAddons(object):
         status = yaml.safe_load(sh.microk8s.status(format="yaml").stdout)
         expected = {"python-hello-k8s": "enabled"}
         microk8s_disable("python-hello-k8s")
+
+    def test_colours(self):
+        microk8s_enable("colours")
+        wait_for_pod_state("", "default", "running", label="app=colours")
+        status = yaml.safe_load(sh.microk8s.status(format="yaml").stdout)
+        expected = {"colours": "enabled"}
+        microk8s_disable("colours")
+
