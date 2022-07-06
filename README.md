@@ -2,8 +2,7 @@
 
 A MicroK8s addons repository should have a comprehensive description of the addons collection it includes. The current template repository contains two addons:
 
-  * bash-hello-k8s, a demo addon implemented in bash
-  * python-hello-k8s, a python based demo addon
+  * colours, application to get colour images
 
 The purpose of the addons should be clearly stated. In this demo repository our goal is to demonstrate how addons are structured so as to can guide you in your first steps as an addons author.
 
