@@ -8,3 +8,10 @@ microk8s-addons:
       supported_architectures:
        - arm64
        - amd64
+
+    - name: "grafana"
+      description: "View metrics from services and nodes"
+      version: "1.0.0"
+      check_status: "deployment.apps/grafana"
+      supported_architectures:
+       - amd64
