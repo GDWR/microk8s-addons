@@ -10,8 +10,11 @@ KUBECTL = os.path.expandvars("$SNAP/microk8s-kubectl.wrapper")
 
 @click.command()
 def main():
+    current_path = os.path.dirname(os.path.realpath(__file__))
+    manifest = f"{current_path}/colours.yaml"
+
     click.echo("Enabling colours")
-    subprocess.check_call([KUBECTL, "apply", "-f", "colours.yaml"])
+    subprocess.check_call([KUBECTL, "apply", "-f", manifest])
     click.echo("Enabled colours")
 
 
