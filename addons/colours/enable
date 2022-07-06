@@ -7,15 +7,25 @@ import click
 
 KUBECTL = os.path.expandvars("$SNAP/microk8s-kubectl.wrapper")
 
+
 @click.command()
 @click.option("--replicas", required=False, default=1, type=int)
 def main(replicas):
     click.echo("Enabling colours")
-    subprocess.check_call([
-        KUBECTL, "create", "deploy", "colours", "--image", "colours", "--replicas", str(replicas),
-    ])
+    subprocess.check_call(
+        [
+            KUBECTL,
+            "create",
+            "deploy",
+            "colours",
+            "--image",
+            "colours",
+            "--replicas",
+            str(replicas),
+        ]
+    )
     click.echo("Enabled colours")
+
 
 if __name__ == "__main__":
     main()
-

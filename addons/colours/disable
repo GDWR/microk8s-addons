@@ -6,13 +6,13 @@ import subprocess
 
 KUBECTL = os.path.expandvars("$SNAP/microk8s-kubectl.wrapper")
 
+
 @click.command()
 def main():
     click.echo("Disabling colours")
-    subprocess.check_call([
-        KUBECTL, "delete", "deploy", "colours"
-    ])
+    subprocess.check_call([KUBECTL, "delete", "deploy", "colours"])
     click.echo("Disabled colours")
+
 
 if __name__ == "__main__":
     main()
