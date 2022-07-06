@@ -19,7 +19,7 @@ def main(replicas):
             "deploy",
             "colours",
             "--image",
-            "colours",
+            "ghcr.io/gdwr/colours:master",
             "--replicas",
             str(replicas),
         ]
