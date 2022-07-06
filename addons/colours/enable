@@ -9,21 +9,9 @@ KUBECTL = os.path.expandvars("$SNAP/microk8s-kubectl.wrapper")
 
 
 @click.command()
-@click.option("--replicas", required=False, default=1, type=int)
-def main(replicas):
+def main():
     click.echo("Enabling colours")
-    subprocess.check_call(
-        [
-            KUBECTL,
-            "create",
-            "deploy",
-            "colours",
-            "--image",
-            "ghcr.io/gdwr/colours:master",
-            "--replicas",
-            str(replicas),
-        ]
-    )
+    subprocess.check_call([KUBECTL, "apply", "-f", "colours.yaml"])
     click.echo("Enabled colours")
 
 

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colours
+spec:
+  selector:
+    matchLabels:
+      app: colours
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: colours
+    spec:
+      containers:
+      - name: colours
+        image: ghcr.io/gdwr/colours:master
+        ports:
+        - containerPort: 8080
