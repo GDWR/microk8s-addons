@@ -18,4 +18,3 @@ class TestAddons(object):
         status = yaml.safe_load(sh.microk8s.status(format="yaml").stdout)
         expected = {"colours": "enabled"}
         microk8s_disable("colours")
-
