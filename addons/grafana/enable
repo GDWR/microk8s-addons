@@ -15,7 +15,7 @@ def main():
     manifest = f"{current_path}/grafana.yaml"
 
     # Failures are ignored
-    subprocess.check_call([KUBECTL, "create", "namespace", "gdwr"])
+    subprocess.run([KUBECTL, "create", "namespace", "gdwr"])
 
     click.echo("Enabling grafana")
     subprocess.check_call([KUBECTL, "apply", "-f", manifest])
